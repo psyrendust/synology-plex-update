@@ -2,41 +2,38 @@
   "name": "synology-plex-update",
   "version": "0.0.0",
   "description": "Script to automatically update Plex Media Server on Synology NAS",
-  "type": "module",
-  "exports": {
-    "types": "./dist/index.d.ts",
-    "default": "./dist/index.js"
-  },
-  "sideEffects": false,
-  "engines": {
-    "node": ">=18"
-  },
-  "scripts": {
-    "build": "del-cli dist && tsc",
-    "watch": "yarn build --watch",
-    "dev": "node ./dist/index.js",
-    "lint": "yarn lint:json && yarn lint:source",
-    "lint:json": "prettier '*.{json,md,yml}' '*/**/*.{json,md,yml}' 'package.json' --ignore-path .gitignore --check",
-    "lint:source": "biome check .",
-    "fix": "yarn lint:json --write && yarn lint:source --apply",
-    "test": "tsc --noEmit && biome test ./source",
-    "release": "semantic-release --no-ci",
-    "release:debug": "ROARR_LOG=true DEBUG='semantic-release:github' yarn release --debug=true",
-    "release:dryrun": "yarn release:debug --dry-run --no-ci"
-  },
-  "files": [
-    "dist/source"
-  ],
   "keywords": [
     "plex",
     "synology",
     "update",
     "plexupdate"
   ],
+  "license": "MIT",
   "author": {
     "name": "Larry Gordon"
   },
-  "license": "MIT",
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    "types": "./dist/index.d.ts",
+    "default": "./dist/index.js"
+  },
+  "files": [
+    "dist/source"
+  ],
+  "scripts": {
+    "build": "del-cli dist && tsc",
+    "dev": "node ./dist/index.js",
+    "fix": "yarn lint:json --write && yarn lint:source --apply",
+    "lint": "yarn lint:json && yarn lint:source",
+    "lint:json": "prettier '*.{json,md,yml}' '*/**/*.{json,md,yml}' 'package.json' --ignore-path .gitignore --check",
+    "lint:source": "biome check .",
+    "release": "semantic-release --no-ci",
+    "release:debug": "ROARR_LOG=true DEBUG='semantic-release:github' yarn release --debug=true",
+    "release:dryrun": "yarn release:debug --dry-run --no-ci",
+    "test": "tsc --noEmit && biome test ./source",
+    "watch": "yarn build --watch"
+  },
   "dependencies": {
     "execa": "^8.0.1"
   },
@@ -45,7 +42,12 @@
     "@commitlint/config-conventional": "^18.4.3",
     "@sindresorhus/tsconfig": "^5.0.0",
     "del-cli": "^5.1.0",
+    "prettier": "^3.1.1",
+    "prettier-plugin-packagejson": "^2.4.8",
     "semantic-release": "^22.0.12",
     "typescript": "^5.3.3"
+  },
+  "engines": {
+    "node": ">=18"
   }
 }
