@@ -1,6 +1,6 @@
 {
   "name": "synology-plex-update",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Script to automatically update Plex Media Server on Synology NAS",
   "keywords": [
     "plex",
