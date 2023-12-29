@@ -1,7 +1,7 @@
 /** @type {import("prettier").Config} */
 const config = {
   plugins: ["prettier-plugin-packagejson"],
-  printWidth: 120,
+  printWidth: 80,
   singleQuote: true,
   tabWidth: 2,
   trailingComma: "es5",
