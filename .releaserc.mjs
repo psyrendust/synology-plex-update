@@ -1,4 +1,5 @@
-module.exports = {
+/** @type {import('semantic-release').GlobalConfig} */
+const config = {
   branches: [
     "+([0-9])?(.{+([0-9]),x}).x",
     "main",
@@ -37,3 +38,5 @@ module.exports = {
   ],
   preset: "conventionalcommits",
 };
+
+export default config;
