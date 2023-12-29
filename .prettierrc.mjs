@@ -5,6 +5,14 @@ const config = {
   tabWidth: 2,
   trailingComma: "es5",
   useTabs: false,
+  overrides: [
+    {
+      files: "*.yml",
+      options: {
+        singleQuote: false,
+      },
+    },
+  ],
 };
 
 export default config;

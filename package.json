@@ -16,7 +16,7 @@
     "watch": "yarn build --watch",
     "dev": "node ./dist/index.js",
     "lint": "yarn lint:json && yarn lint:source",
-    "lint:json": "prettier '*.{json,md}' 'package.json' --ignore-path .gitignore --check",
+    "lint:json": "prettier '*.{json,md,yml}' '*/**/*.{json,md,yml}' 'package.json' --ignore-path .gitignore --check",
     "lint:source": "biome check .",
     "fix": "yarn lint:json --write && yarn lint:source --apply",
     "test": "tsc --noEmit && biome test ./source",
