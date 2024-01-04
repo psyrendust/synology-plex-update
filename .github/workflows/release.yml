@@ -2,7 +2,12 @@ name: Semantic Release
 
 on:
   push:
-    branches: ["main"]
+    branches:
+      - main
+      - dev
+      - next
+      - beta
+      - alpha
 
 jobs:
   lint:

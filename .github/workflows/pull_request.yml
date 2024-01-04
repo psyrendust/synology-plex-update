@@ -2,7 +2,12 @@ name: Code quality
 
 on:
   pull_request:
-    branches: ["main"]
+    branches:
+      - main
+      - dev
+      - next
+      - beta
+      - alpha
 
 jobs:
   lint:
